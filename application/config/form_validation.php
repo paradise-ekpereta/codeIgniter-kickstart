@@ -18,7 +18,7 @@ $config = array(
                         'rules' => 'required|max_length[15]'
                 ),
                 array(
-                        'field' => 'confirm_password',
+                        'field' => 'password_confirmation',
                         'label' => 'Confirm Password',
                         'rules' => 'required|matches[password]'
                 ),
@@ -49,7 +49,19 @@ $config = array(
                 )
 
         ),
-        'login/index' => array(
+        'auth/login' => array(
+                array(
+                        'field' => 'email',
+                        'label' => 'Email Address',
+                        'rules' => 'required|valid_email'
+                ),
+                array(
+                        'field' => 'password',
+                        'label' => 'Password',
+                        'rules' => 'required|max_length[15]'
+                )
+        ),
+        'admin/login' => array(
                 array(
                         'field' => 'email',
                         'label' => 'Email Address',

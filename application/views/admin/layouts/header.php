@@ -12,10 +12,12 @@
 <!--<link href='//fonts.googleapis.com/css?family=Bitter:400,700|Source+Sans+Pro:300,400,600,700' rel='stylesheet'>-->
 
 <link href="/public/css/app.css" rel="stylesheet">
+<link href="/public/css/dataTables.bootstrap.css" rel="stylesheet">
+<link href="/public/css/responsive.bootstrap.min.css" rel="stylesheet">
 <link href="/public/css/validationEngine.jquery.css" rel="stylesheet">
 <link href="/public/css/animate.min.css" media="all" rel="stylesheet">
 <link href="/public/css/bootstrap-social.css" rel="stylesheet">
-<link href="/public/css/style.css" rel="stylesheet">
+<link href="/public/css/admin.css" rel="stylesheet">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -31,9 +33,9 @@
 </head>
 <body>
 
-<!-- Fixed navbar -->
+
     <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
             <span class="sr-only">Toggle navigation</span>
@@ -41,35 +43,51 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">MyApp</a>
+          <a class="navbar-brand" href="#">MyApp</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
-
-          <?php if($this->auth_model->guest()) { ?>
-          <div class="pull-right header-buttons">
-              <button type="button" class="btn btn-danger navbar-btn" style="margin-right:20px;" data-toggle="modal" data-target="#myLogin" href="#"><span class="fa fa-key"></span> Sign in</button>
-              <button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#mySignup" href="#"> <span class="glyphicon glyphicon-user"></span> Create an account</button>
-          </div>
-          <?php }else{ ?>
-            <ul class="nav navbar-nav navbar-right">
+         <?php if($this->auth_model->loggedIn() && $this->auth_model->isAdmin()){ ?>
+          <ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Hi, <?= ucfirst($this->auth_model->user()->firstname); ?> <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="#">My Profile</a></li>
                 <li><a href="#">My Settings</a></li>
                 <li role="separator" class="divider"></li>
-                <li><a href="/auth/logout">Log Out</a></li>
+                <li><a href="/admin/logout">Log Out</a></li>
               </ul>
             </li>
-            </ul>
-          <?php } ?>
-          <ul class="nav navbar-nav pull-right">
-            <li><a href="#about">Home <i class="fa fa-angle-down"></i></a></li>
-            <li><a href="#contact">Pricing <i class="fa fa-angle-down"></i></a></li>
-            <li><a href="#contact">Support <i class="fa fa-angle-down"></i></a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+          <form class="navbar-form navbar-right">
+            <input type="text" class="form-control" placeholder="Search for...">
+          </form>
+          <?php } ?>
+        </div>
       </div>
     </nav>
-    <div class="container">
-    <?= $this->flash->displayFlashMessages(); ?>
+
+    <div class="container-fluid">
+      <div class="row">
+
+       <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li class="active"><a href="#"> Dashboard </a></li>
+            <li><a href="/admin/users">Manage Users</a></li>
+            <li><a href="/admin/pages">Manage Pages</a></li>
+            <li><a href="#">Export</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item</a></li>
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+            <li><a href="">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="">Nav item again</a></li>
+            <li><a href="">One more nav</a></li>
+            <li><a href="">Another nav item</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+        <?= $this->flash->displayFlashMessages(); ?>

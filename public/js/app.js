@@ -1,12 +1,15 @@
 $(function(){
 
-    $('#accordion').on('hidden.bs.collapse', toggleChevron);
-    $('#accordion').on('shown.bs.collapse', toggleChevron);
-    $('#flash-overlay-modal').modal();
+
+    $('#flash-notice-modal').modal();
     $('#flash-notices').modal();
     $(".form-validate").validationEngine();
+    $('.data-table').DataTable();
 
 
+    /*
+    //$('#accordion').on('hidden.bs.collapse', toggleChevron);
+    //$('#accordion').on('shown.bs.collapse', toggleChevron);
     function toggleChevron(e) {
     $(e.target)
         .prev('.panel-heading')
@@ -18,4 +21,5 @@ $(function(){
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+*/
 });

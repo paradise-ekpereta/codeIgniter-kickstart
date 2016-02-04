@@ -14,29 +14,20 @@ class Auth extends CI_Controller
             //take the user home
             redirect('/');
         }
-        if($this->form_validation->run('login') == FALSE)
+        if($this->form_validation->run() == FALSE)
         {
-            $data['page_title'] = "Login Area";
-            $this->load->view('layouts/header',$data);
-            $this->load->view('auth/login');
-            $this->load->view('layouts/footer');
+            $this->flash->overlay(validation_errors());
         }
         else
         {
             $email = $this->input->post('email');
-            $password = md5($this->input->post('password'));
+            $password = $this->input->post('password');
 
-            if($this->auth_model->login($email,$password))
+            if(!$this->auth_model->login($email,$password))
             {
-                redirect('/messaging/compose');
+                $this->flash->overlay("Your email or password is incorrect");
             }
-            else
-            {
-                $data['page_title'] = "Login Area";
-                $this->load->view('layouts/header',$data);
-                $this->load->view('auth/login',$data);
-                $this->load->view('layouts/footer');
-            }
+            return redirect('/');
         }
     }
     public function verify($token)
@@ -55,36 +46,6 @@ class Auth extends CI_Controller
             $this->flash->overlay('Your email address has already been verified');
         }
         redirect('/');
-    }
-    public function register()
-    {
-        if($this->auth_model->loggedIn())
-        {
-            //take the user home
-            redirect('/');
-        }
-        if($this->form_validation->run('signup') == FALSE)
-        {
-            $data['page_title'] = "Create Account";
-            $this->load->view('layouts/header',$data);
-            $this->load->view('auth/register');
-            $this->load->view('layouts/footer');
-        }
-        else
-        {
-            $this->load->model('user_model');
-            if($this->user_model->create())
-            {
-                $this->flash->overlay('Your account was created successfully. A message has been sent to your email address.');
-                redirect('/');
-            }
-            else
-            {
-                $this->load->view('layouts/header',$data);
-                $this->load->view('auth/register',$data);
-                $this->load->view('layouts/footer');
-            }
-        }
     }
     public function logout()
     {

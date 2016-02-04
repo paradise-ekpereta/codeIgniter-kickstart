@@ -18,7 +18,7 @@
                         </a>
                     </div>
                     <div class="col-md-6 col-sm-12 login-column">
-                    <h4 class="modal-title" id="myModalLabel">Sign in with email</h4>
+                    <h4 class="modal-title" id="myModalLabel" style="margin-bottom: 5px;">Sign in with email</h4>
                         <?= form_open('/auth/login',array('class' => 'form-validate form-horizontal')); ?>
                     <div class="form-group">
                         <input type="email" class="input form-control validate[required]" name="email" value="<?= set_value('email'); ?>" placeholder="Email Address">
@@ -59,8 +59,8 @@
                   <div class="modal-body header-less-modal">
 
                     <div class="col-md-12 col-sm-12 login-column">
-                    <h4 class="modal-title" id="myModalLabel">Sign up with email</h4>
-                        <?= form_open('/auth/register',array('class' => 'form-horizontal form-validate')); ?>
+                    <h4 class="modal-title" id="myModalLabel" style="margin-bottom: 10px;">Sign up with email</h4>
+                        <?= form_open('/join',array('class' => 'form-horizontal form-validate')); ?>
                     <div class="form-group">
                         <div class="col-md-6 col-sm-12">
                           <input type="text" class="input form-control validate[required]" name="firstname" value="<?= set_value('firstname'); ?>" placeholder="Firstname">
@@ -83,7 +83,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-md-12 col-sm-12">
-                          <input type="text" class="input form-control validate[required]" name="phone" placeholder="Mobile Number" value="<?= set_value('mobile_number') ?>" maxlength="15">
+                          <input type="text" class="input form-control validate[required]" name="phone" placeholder="Mobile Number" value="<?= set_value('phone') ?>" maxlength="15">
                         </div>
                     </div>
                     <div class="form-group">

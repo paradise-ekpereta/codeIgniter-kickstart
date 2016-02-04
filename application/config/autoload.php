@@ -60,7 +60,8 @@ $autoload['packages'] = array();
 */
 $autoload['libraries'] = array(
                                'form_validation',
-                               'flash'
+                               'flash',
+                               'password'
                                );
 
 /*
