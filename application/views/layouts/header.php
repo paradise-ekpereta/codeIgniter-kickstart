@@ -7,7 +7,7 @@
 <meta content="" name="description">
 <meta content="" name="keywords">
 <meta content="Paradise Ekpereta" name="author">
-<title> HTML5 APP > <?= $page_title; ?></title>
+<title> Empathy Healthcare > <?= $page_title; ?></title>
 <link href="/public/css/font-awesome.min.css" rel="stylesheet">
 <!--<link href='//fonts.googleapis.com/css?family=Bitter:400,700|Source+Sans+Pro:300,400,600,700' rel='stylesheet'>-->
 
@@ -17,7 +17,7 @@
 <link href="/public/css/bootstrap-social.css" rel="stylesheet">
 <link href="/public/css/style.css" rel="stylesheet">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!--<link rel="icon" href="favicon.ico" type="image/x-icon">-->
 
     <!-- Fonts -->
     <!--<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>-->
@@ -48,7 +48,6 @@
           <?php if($this->auth_model->guest()) { ?>
           <div class="pull-right header-buttons">
               <button type="button" class="btn btn-danger navbar-btn" style="margin-right:20px;" data-toggle="modal" data-target="#myLogin" href="#"><span class="fa fa-key"></span> Sign in</button>
-              <button type="button" class="btn btn-success navbar-btn" data-toggle="modal" data-target="#mySignup" href="#"> <span class="glyphicon glyphicon-user"></span> Create an account</button>
           </div>
           <?php }else{ ?>
             <ul class="nav navbar-nav navbar-right">

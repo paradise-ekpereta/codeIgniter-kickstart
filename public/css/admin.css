@@ -103,3 +103,13 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+.thumb {
+  max-height: 150px;
+  max-width: 150px;
+  border-radius: 6px;
+}
+img.edit-article-preview {
+  max-width: 80px;
+  max-height: 80px;
+  border-radius: 6px;
+}

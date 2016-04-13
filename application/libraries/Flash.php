@@ -66,5 +66,22 @@ class Flash
                   </div>
                 </div>';
         }
+        if(!empty(validation_errors()))
+        {
+            echo '
+                <div class="modal fade" id="flash-notice-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Fix the following errors</h4>
+                      </div>
+                      <div class="modal-body">
+                        '.validation_errors().'
+                      </div>
+                    </div>
+                  </div>
+                </div>';
+        }
     }
 }

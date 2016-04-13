@@ -129,6 +129,7 @@
     <script src="/public/js/jquery.validationEngine.js" type="text/javascript"></script>
     <script src="/public/js/countries.js" type="text/javascript"></script>
     <script src="/public/js/jquery.form.js" type="text/javascript"></script>
+    <script src="/public/js/script.js" type="text/javascript"></script>
     <script src="/public/js/app.js" type="text/javascript"></script>
     <script language="javascript">print_country("country");</script>
 

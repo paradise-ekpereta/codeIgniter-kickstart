@@ -72,5 +72,63 @@ $config = array(
                         'label' => 'Password',
                         'rules' => 'required|max_length[15]'
                 )
+        ),
+        'category' => array(
+                array(
+                        'field' => 'name',
+                        'label' => 'Category name',
+                        'rules' => 'required|max_length[255]'
+                ),
+                array(
+                        'field' => 'category_order',
+                        'label' => 'Order',
+                        'rules' => 'required|numeric'
+                )
+        ),
+        'article' => array(
+                array(
+                        'field' => 'title',
+                        'label' => 'Article title',
+                        'rules' => 'required|max_length[255]'
+                ),
+                array(
+                        'field' => 'category',
+                        'label' => 'Category',
+                        'rules' => 'required|numeric'
+                ),
+                array(
+                        'field' => 'content',
+                        'label' => 'Article Body',
+                        'rules' => 'required'
+                )
+        ),
+        'page' => array(
+                array(
+                        'field' => 'title',
+                        'label' => 'Page title',
+                        'rules' => 'required|max_length[255]'
+                ),
+                array(
+                        'field' => 'name',
+                        'label' => 'Menu name',
+                        'rules' => 'required|max_length[100]'
+                ),
+                array(
+                        'field' => 'status',
+                        'label' => 'Status',
+                        'rules' => 'required'
+                ),
+                array(
+                        'field' => 'content',
+                        'label' => 'Page Body',
+                        'rules' => 'required'
+                )
+        ),
+        'admin/settings' => array(
+                array(
+                        'field' => 'test',
+                        'label' => 'All fields',
+                        'rules' => 'required'
+                )
         )
 );

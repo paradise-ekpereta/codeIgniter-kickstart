@@ -9,8 +9,6 @@
                   <th>Firstname</th>
                   <th>Lastname</th>
                   <th>Email</th>
-                  <th>Country</th>
-                  <th>State</th>
                   <th>Type</th>
                   <th>status</th>
                   <th>Action</th>
@@ -24,8 +22,6 @@
                   <td><?= $user->firstname; ?></td>
                   <td><?= $user->lastname; ?></td>
                   <td><?= $user->email; ?></td>
-                  <td><?= $user->country; ?></td>
-                  <td><?= $user->state; ?></td>
                   <td><span class="label label-info"><?= ucfirst($user->account_type); ?></span></td>
                   <td>
                       <?php if($user->status == 'active') { ?>

@@ -7,7 +7,7 @@
 <meta content="" name="description">
 <meta content="" name="keywords">
 <meta content="Paradise Ekpereta" name="author">
-<title> HTML5 APP > <?= $page_title; ?></title>
+<title> Empathy Healthcare Administration > <?= $page_title; ?></title>
 <link href="/public/css/font-awesome.min.css" rel="stylesheet">
 <!--<link href='//fonts.googleapis.com/css?family=Bitter:400,700|Source+Sans+Pro:300,400,600,700' rel='stylesheet'>-->
 
@@ -71,22 +71,14 @@
 
        <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
-            <li class="active"><a href="#"> Dashboard </a></li>
+            <li class="active"><a href="/admin"> Dashboard </a></li>
+            <li><a href="/admin/write">Write</a></li>
+            <li><a href="/admin/categories">Categories</a></li>
+            <li><a href="/admin/articles">Articles</a></li>
             <li><a href="/admin/users">Manage Users</a></li>
-            <li><a href="/admin/pages">Manage Pages</a></li>
-            <li><a href="#">Export</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item</a></li>
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
-            <li><a href="">More navigation</a></li>
-          </ul>
-          <ul class="nav nav-sidebar">
-            <li><a href="">Nav item again</a></li>
-            <li><a href="">One more nav</a></li>
-            <li><a href="">Another nav item</a></li>
+            <li><a href="/admin/create_page">Create Page</a></li>
+            <li><a href="/admin/pages">Pages</a></li>
+            <li><a href="/admin/settings">Site Settings</a></li>
           </ul>
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
